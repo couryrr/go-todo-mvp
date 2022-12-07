@@ -1,0 +1,22 @@
+@import url("./_global/normalize.css");
+@import url("./_global/style.css");
+
+nav.site-nav {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+
+.todo-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 5px;
+}
+
+.todo-calendar-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+}

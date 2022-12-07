@@ -1,0 +1,6 @@
+@import url("../_global/normalize.css");
+@import url("../_global/style.css");
+
+.form-container {
+  text-align: right;
+}

@@ -1,0 +1,9 @@
+.todo-goal-container {
+    padding: 0 0 0 15px;
+    border: 1px solid;
+}
+
+.todo-goal-container ul {
+    list-style: none;
+    padding: 0;
+}

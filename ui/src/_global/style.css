@@ -1,0 +1,10 @@
+:root {
+    --background-color-rgb: 231, 235, 237;
+    --main-color-rgb: 41, 49, 54;
+    --side-bar-color-rgb: 54, 46, 41;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(var(--background-color-rgb));
+}
