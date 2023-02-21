@@ -1,14 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Create.css";
+import { CreateContext } from "../App";
 
 export const FormHandler = (props) => {
-  const [form, setForm] = useState({
-    milestoneName: "",
-    goalName: "",
-    taskName: "",
-    taskDuration: "",
-    taskEffort: "",
-  });
+  const { state, setCreateForm } = useContext(CreateContext);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -18,24 +13,23 @@ export const FormHandler = (props) => {
 
     obj[name] = value;
 
-    setForm((prevState) => {
-      return { ...prevState, ...obj };
-    });
+    setCreateForm({ createForm: { goal: { Name: value } } });
   };
 
+  /*
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const obj = {
-      name: form.goalName,
+      name: props.goals.goalName,
       milestones: [
         {
-          name: form.milestoneName,
+          name: props.goals.milestoneName,
           tasks: [
             {
-              name: form.taskName,
-              duration: parseInt(form.taskDuration),
-              effort: parseInt(form.taskEffort),
+              name: props.goals.taskName,
+              duration: parseInt(props.goal.taskDuration),
+              effort: parseInt(props.goal.taskEffort),
             },
           ],
         },
@@ -45,43 +39,27 @@ export const FormHandler = (props) => {
     const url = "http://localhost:9999/goal/";
     const requestOptions = {
       method: "POST",
-
       body: JSON.stringify(obj),
     };
     fetch(url, requestOptions)
       .then((response) => console.log("Submitted successfully"))
       .catch((error) => console.log("Form submit error", error));
   };
+  */
 
-  const updateChildrenWithProps = (children) =>
-    React.Children.map(children, (child, i) => {
+  const updateChildrenWithProps = (children, createForm) =>
+    React.Children.map(children, (child, _) => {
       return React.cloneElement(child, {
-        form: form,
-        handleChange: handleChange,
+        createForm,
+        handleChange,
       });
     });
 
   return (
-    <form onSubmit={handleSubmit}>
-      {updateChildrenWithProps(props.children)}
-    </form>
-  );
-};
-
-const MilestoneCreateForm = (props) => {
-  const handleChange = (e) => {
-    props.handleChange(e);
-  };
-  return (
-    <div className="form-container">
-      <span className="form-label">Milestone Name: </span>
-      <input
-        onChange={handleChange}
-        value={props.form.milestoneName}
-        name="milestoneName"
-      />
+    <form>
+      {updateChildrenWithProps(props.children, state.createForm)}
       <button type="submit">Add</button>
-    </div>
+    </form>
   );
 };
 
@@ -95,8 +73,24 @@ export const CreateGoalForm = (props) => {
       <span className="form-label">Goal Name: </span>
       <input
         onChange={handleChange}
-        value={props.form.goalName}
+        value={props.createForm.goal.Name}
         name="goalName"
+      />
+    </div>
+  );
+};
+
+const MilestoneCreateForm = (props) => {
+  const handleChange = (e) => {
+    props.handleChange(e);
+  };
+  return (
+    <div className="form-container">
+      <span className="form-label">Milestone Name: </span>
+      <input
+        onChange={handleChange}
+        value={props.goals.milestoneName}
+        name="milestoneName"
       />
     </div>
   );
@@ -113,7 +107,7 @@ export const CreateTaskForm = (props) => {
         <span>Task Name: </span>
         <input
           onChange={handleChange}
-          value={props.form.taskName}
+          value={props.goals.taskName}
           name="taskName"
         />
       </div>
@@ -121,7 +115,7 @@ export const CreateTaskForm = (props) => {
         <span>Duration:</span>
         <input
           onChange={handleChange}
-          value={props.form.taskDuration}
+          value={props.goals.taskDuration}
           name="taskDuration"
         />
       </div>
@@ -129,7 +123,7 @@ export const CreateTaskForm = (props) => {
         <span>Effort:</span>
         <input
           onChange={handleChange}
-          value={props.form.taskEffort}
+          value={props.goals.taskEffort}
           name="taskEffort"
         />
       </div>

@@ -27,9 +27,7 @@ func init() {
 	if container.serverConfig == nil {
 		panic("failed to parse config")
 	}
-
 	dbconf := container.serverConfig.Server.DB
-
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		dbconf.User,
 		dbconf.Password,
@@ -37,6 +35,7 @@ func init() {
 		dbconf.Port,
 		dbconf.Schema,
 	)
+	
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
@@ -49,7 +48,6 @@ func init() {
 }
 
 func main() {
-
 	container.getRouter().POST("goal/", func(routerContex *gin.Context) {
 		data, err := controller.Create(routerContex, container.getDb())
 		if err != nil {

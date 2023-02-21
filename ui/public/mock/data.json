@@ -1,0 +1,89 @@
+{
+  "goals": [
+    {
+      "CreatedAt": "2022-12-12T23:49:44Z",
+      "UpdatedAt": "2022-12-12T23:49:44Z",
+      "DeletedAt": null,
+      "ID": 1,
+      "Name": "Create Todo App",
+      "Milestones": [
+        {
+          "CreatedAt": "2022-12-12T23:49:44Z",
+          "UpdatedAt": "2022-12-12T23:49:44Z",
+          "DeletedAt": null,
+          "ID": 1,
+          "Name": "UI Setup",
+          "GoalID": 1,
+          "Tasks": [
+            {
+              "CreatedAt": "2022-12-12T23:49:44Z",
+              "UpdatedAt": "2022-12-12T23:49:44Z",
+              "DeletedAt": null,
+              "ID": 1,
+              "Name": "asd",
+              "MilestoneID": 1,
+              "Duration": 0,
+              "Effort": 0
+            }
+          ]
+        },
+        {
+          "CreatedAt": "2022-12-12T23:49:44Z",
+          "UpdatedAt": "2022-12-12T23:49:44Z",
+          "DeletedAt": null,
+          "ID": 2,
+          "Name": "Backend Setup",
+          "GoalID": 1,
+          "Tasks": [
+            {
+              "CreatedAt": "2022-12-12T23:49:44Z",
+              "UpdatedAt": "2022-12-12T23:49:44Z",
+              "DeletedAt": null,
+              "ID": 1,
+              "Name": "asd",
+              "MilestoneID": 1,
+              "Duration": 0,
+              "Effort": 0
+            }
+          ]
+        },
+        {
+          "CreatedAt": "2022-12-12T23:49:44Z",
+          "UpdatedAt": "2022-12-12T23:49:44Z",
+          "DeletedAt": null,
+          "ID": 1,
+          "Name": "Infra Setup",
+          "GoalID": 1,
+          "Tasks": [
+            {
+              "CreatedAt": "2022-12-12T23:49:44Z",
+              "UpdatedAt": "2022-12-12T23:49:44Z",
+              "DeletedAt": null,
+              "ID": 1,
+              "Name": "asd",
+              "MilestoneID": 1,
+              "Duration": 0,
+              "Effort": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CreatedAt": "2022-12-12T23:49:44Z",
+      "UpdatedAt": "2022-12-12T23:49:44Z",
+      "DeletedAt": null,
+      "ID": 3,
+      "Name": "Dog Sled Adventure",
+      "Milestones": []
+    },
+    {
+      "CreatedAt": "2022-12-12T23:49:44Z",
+      "UpdatedAt": "2022-12-12T23:49:44Z",
+      "DeletedAt": null,
+      "ID": 4,
+      "Name": "Practise Spanish",
+      "Milestones": []
+    }
+  ]
+}

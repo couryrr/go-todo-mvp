@@ -2,7 +2,6 @@ import "./Modal.css";
 
 const Modal = (props) => {
   const closeModal = () => {
-    console.log("hello");
     props.closeModalFn();
   };
   return (

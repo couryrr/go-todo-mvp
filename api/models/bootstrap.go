@@ -26,7 +26,7 @@ type Config struct {
 
 func InitConfig() *Config {
 	// TODO: Adjust this to work locally. Might not be needed since we are in docker.
-	f, err := os.Open("/sbin/config/config.yaml")
+	f, err := os.Open("./config/config.yaml")
 
 	if err != nil {
 		fmt.Println(err)
